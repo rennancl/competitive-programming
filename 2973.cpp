@@ -2,7 +2,7 @@
 
 int main() {
     int n, c, t;
-    int sacos[12345];
+    int sacos[1000000];
     int total = 0;
     scanf("%d %d %d", &n, &c, &t);
     for(int i = 0; i < n; i++){
@@ -10,10 +10,11 @@ int main() {
         total += sacos[i];
     }
     // tempo minimo pra começar e evitar operações desnecessárias
-    int mint = total/(t*c);
+    int mint = total/(t*c) - 1;
+    if(mint < 0) mint = 1;
     // std::cout << mint << std::endl;
 
-    for(int i = mint; i < total; i++){
+    for(int i = mint; i < total + 1; i++){
         int counter = 0;
         int sum = 0;
         int quant_vez = i*t;
@@ -24,7 +25,7 @@ int main() {
                 sum += sacos[j];
 
             if(sacos[j] > quant_vez){
-                counter = 12345;
+                counter = 100000;
                 break;
             }
             if(sum > quant_vez){
