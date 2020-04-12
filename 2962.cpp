@@ -62,6 +62,14 @@ int main() {
             std::cout << "N" << std::endl; 
             return 0;
         }
+        if(group[i][0] <= 0 and group[i][1] >= m){
+            std::cout << "N" << std::endl; 
+            return 0;
+        }
+        if(group[i][3] >= n and group[i][2] <= 0){
+            std::cout << "N" << std::endl; 
+            return 0;
+        }
         if(group[i][1] >= m and group[i][3] >= n){
             std::cout << "N" << std::endl; 
             return 0;
