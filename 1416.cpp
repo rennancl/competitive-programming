@@ -83,6 +83,7 @@ int main() {
         sort(times.begin(), times.end(), compare_times); 
         original = times;
         original_score = get_board(times);
+        //alterar esse valor altera a resposta!!!
         int lower, upper;
         for(int i = 1; i < 21; i++){
             ep = i;
